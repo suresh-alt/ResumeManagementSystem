@@ -42,12 +42,12 @@
     <ul class="navbar-nav">
         <div class="menu">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'main' %}">Home <span class="sr-only">(current)</span></a>
       </li>
         </div>
            <div class="menu">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Registration <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'reg' %}">Registration <span class="sr-only">(current)</span></a>
       </li>
         </div>
            <div class="menu">
@@ -86,7 +86,11 @@
             </th>
         </tr>
         <tr>
-            <th colspan="2">Content</th>
+            <th colspan="2">
+                {% block suresh %}
+
+                {% endblock %}
+            </th>
         </tr>
         <tr>
             <th  colspan="2" style="text-align:center;color: red;background: yellow;font-size: 20px">CopyRight &copy python with suresh</th>

@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block suresh %}
+    <form action="{% url 'savereg' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="2">
+    <tr>
+        <th colspan="2" style="color: black;text-align: center;background: orangered;font-size: 20px">Registration</th>
+    </tr>
+    {{ form }}
+    <tr>
+        <th style="text-align: center" colspan="2"><button type="submit">Register</button> </th>
+    </tr>
+    </table></form>
+{% endblock %}
