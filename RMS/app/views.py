@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from app.forms import *
 
 # Create your views here.
@@ -7,8 +7,15 @@ def show(request):
 
 
 def reg(request):
+    print("---------1------------")
     rf=RegistrationForm(request.POST)
-    if request.method== 'post':
-        pass
+    if request.method== 'POST':
+        print('------------------3-----------')
+        if rf.is_valid():
+            print('-------------4----------------')
+            rf.save()
+            return redirect('reg')
+
     else:
+        print("--------------2-----------")
         return render(request,"app/reg.html",{"form":rf})

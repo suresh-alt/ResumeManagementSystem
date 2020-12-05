@@ -21,9 +21,9 @@ from RMS import settings
 from app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('',views.show,name='main'),
-    path('reg/',views.reg,name='reg')
+    path('reg/',views.reg,name='reg'),
+    path('savereg/',views.reg,name='savereg')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
