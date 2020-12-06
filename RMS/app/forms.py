@@ -16,7 +16,6 @@ class RegistrationForm(forms.ModelForm):
         message='Welcome to Resume Management Project Your otp is'+ str(rno)
         SendTextMessage(message,cno)
         send_mail(subhect,message,EMAIL_HOST_USER,(mail,))
-
         return rno
     class Meta:
         model=RegistrationModel

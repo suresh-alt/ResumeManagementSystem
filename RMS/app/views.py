@@ -17,6 +17,8 @@ def reg(request):
             rf.save()
 
             return redirect('validateotp')
+        else:
+            return render(request, "app/reg.html", {"form": rf})
 
     else:
         print("--------------2-----------")
