@@ -24,7 +24,10 @@ urlpatterns = [
     path('',views.show,name='main'),
     path('reg/',views.reg,name='reg'),
     path('savereg/',views.reg,name='savereg'),
-    path('validateotp/',views.validateotp,name='validateotp')
+    path('validateotp/',views.validateotp,name='validateotp'),
+    path('checkotp/',views.checkotp,name='checkotp'),
+    path('message',views.message,name='message'),
+    path('login/',views.login,name='login')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

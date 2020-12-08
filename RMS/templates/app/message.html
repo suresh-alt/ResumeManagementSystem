@@ -1,0 +1,7 @@
+{% extends 'index.html' %}
+{% block suresh %}
+    {% for x in messages %}
+        <h1 style="text-align: center">{{ x }}</h1>
+    {% endfor %}
+    <h4 style="text-align: center">Please <a href="{% url 'login' %}"> Login</a> Here</h4>
+{% endblock %}
