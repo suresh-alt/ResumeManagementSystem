@@ -1,5 +1,8 @@
 {% extends 'index.html' %}
 {% block suresh %}
+    {% if request.session.contact %}
+    <h1>you are already a member of this application</h1>
+    {% else %}
     <form action="{% url 'savereg' %}" method="post">
     {% csrf_token %}
 
@@ -37,4 +40,5 @@
         <th style="text-align: center" colspan="2"><button type="submit">Register</button> </th>
     </tr>
     </table></form>
+    {% endif %}
 {% endblock %}

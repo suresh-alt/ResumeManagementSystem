@@ -1,6 +1,11 @@
 {% extends 'index.html' %}
 
 {% block suresh %}
+    {% if request.session.contact %}
+    <h1>You are already logged in</h1>
+    {% else %}
+     <form action="{% url 'checklogin' %}" method="post">
+     {% csrf_token %}
     <table align="center" border="0">
     <tr>
         <th style="color: red;background: white">Login Page</th>
@@ -9,11 +14,22 @@
         <th><input type="email" name="t1" placeholder="enter your mail id" required></th>
     </tr>
     <tr>
-        <th><input type="number" name="t2" placeholder="enter otp" required></th>
+        <th><input type="password" name="t2" placeholder="enter your password" required></th>
     </tr>
     <tr>
         <th><button type="submit">Login</button> </th>
     </tr>
 
-    </table>
+    </table></form>
+    {% endif %}
+
+     {% if message %}
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Warning!</strong> {{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+        {% endif %}
 {% endblock %}

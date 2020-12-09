@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block suresh %}
+    {% if request.session.contact %}
+    <h1>Welcome to Profie Page</h1>
+    <h3>Mr/Miss:{{ request.session.name }}</h3>
+
+    {% else %}
+     <h1>please do login</h1>
+    <h4>whithout login you cannot access this page</h4>
+
+    {% endif %}
+
+
+{% endblock %}

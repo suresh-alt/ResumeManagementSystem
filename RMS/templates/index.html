@@ -61,7 +61,7 @@
           Profile <span class="sr-only">(current)</span></a>
         </a>
         <div class="dropdown-menu menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">View Profile</a>
+          <a class="dropdown-item" href="{% url 'viewprofile' %}">View Profile</a>
           <a class="dropdown-item" href="#">Update Profile</a>
           <a class="dropdown-item" href="#">Delete Profile</a>
         </div>
@@ -71,7 +71,7 @@
 </div>
          <div class="menu">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'logout' %}">Logout <span class="sr-only">(current)</span></a>
       </li>
       </div>
 

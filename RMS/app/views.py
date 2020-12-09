@@ -53,3 +53,35 @@ def message(request):
 
 def login(request):
     return render(request,"app/login.html")
+
+
+def checklogin(request):
+    print("==========1==========")
+    try:
+        print("======2===========")
+
+        res=RegistrationModel.objects.get(email=request.POST.get('t1'),password=request.POST.get('t2'))
+        print("===========3==========")
+        if res.status == 'pending':
+            print("===========4=========")
+            return render(request,"app/login.html",{"message":'sorry your registration is pending'})
+        elif res.status == 'closed':
+            print("============5=======")
+            return render(request,"app/login.html",{"message":'sorry your account is closed'})
+        print("=================6==========")
+        request.session['contact']=res.contact
+        request.session['name']=res.name
+        return redirect('viewprofile')
+    except RegistrationModel.DoesNotExist:
+        print("===========7============")
+        return render(request, "app/login.html",{"message":"invalid details"})
+
+
+def viewprofile(request):
+    return render(request,"app/viewprofile.html")
+
+
+def logout(request):
+    del request.session['contact']
+    del request.session['name']
+    return redirect('main')
