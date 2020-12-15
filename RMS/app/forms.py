@@ -20,3 +20,8 @@ class RegistrationForm(forms.ModelForm):
     class Meta:
         model=RegistrationModel
         exclude=('status',)
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model=ProfileModel
+        fields="__all__"

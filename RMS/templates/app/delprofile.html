@@ -6,6 +6,7 @@
     <h3>Mr/Miss:{{ request.session.name }}</h3>
 
         {% if status %}
+
             <table align="center" border="2">
             <tr><th colspan="2">Profile Details</th></tr>
             <tr>
@@ -28,6 +29,13 @@
             </tr>
             <tr>
                 <th>Resume</th><th><a href="{{ data.resume.url }}"> <img src="{{ data.resume.url }}"></a></th>
+            </tr>
+            <tr>
+                <form action="{% url 'dpc' %}" method="post">
+                    {% csrf_token %}
+                    <th><input type="hidden" value="{{ data.pno }}" name="t1"></th>
+
+                    <th><button type="submit">Delete Profile</button> </th></form>
             </tr>
             </table>
             {% else %}

@@ -27,10 +27,18 @@ urlpatterns = [
     path('validateotp/',views.validateotp,name='validateotp'),
     path('checkotp/',views.checkotp,name='checkotp'),
     path('message',views.message,name='message'),
+
     path('login/',views.login,name='login'),
     path('checklogin/',views.checklogin,name='checklogin'),
     path('viewprofile/',views.viewprofile,name='viewprofile'),
-    path('logout/',views.logout,name='logout')
+    path('logout/',views.logout,name='logout'),
+    path('fp',views.fp,name='fp'),
+    path('setp/',views.setp,name='setp'),
+    path('update_profile/',views.update_profile,name='update_profile'),
+    path('saveprofile/',views.saveprofile,name='saveprofile'),
+    path('delprofile/',views.delprofile,name='delprofile'),
+    path('dpc/',views.dpc,name='dpc'),
+    path('aboutus/',views.aboutus,name='aboutus')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
